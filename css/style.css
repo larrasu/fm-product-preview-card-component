@@ -1,0 +1,165 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  anti-alias: true;
+}
+
+:root {
+  --color: 158, 36%;
+  --l: 37%;
+
+  --color-primary-cyan: hsl(158, 36%, 37%);
+  --color-primary-darker: hsl(var(--color), calc(var(--l) - 18%));
+  --color-primary-cream: hsl(30, 38%, 92%);
+  --color-accent-blue: hsl(212, 21%, 14%);
+  --color-accent-gray: hsl(228, 12%, 48%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --font-size: 14px;
+  --font-family-base: "Montserrat", sans-serif;
+  --font-family-heading: "Fraunces", serif;
+}
+
+body {
+  background-color: var(--color-primary-cream);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--color-accent-gray);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 15px;
+  position: relative;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: 0.5rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.img-mobile {
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.img-desktop {
+  display: none;
+}
+
+.card-body {
+  flex: 1 1 0%;
+  padding: 1.5rem;
+}
+
+.perfume {
+  letter-spacing: 0.4rem;
+  font-size: 11px;
+  margin-bottom: 0.5rem;
+}
+
+.card-body > h1 {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent-blue);
+}
+
+.card-body > p {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sale {
+  font-family: var(--font-family-heading);
+  color: var(--color-primary-cyan);
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.prev {
+  text-decoration: line-through;
+  color: var(--color-accent-gray);
+}
+
+button {
+  background: var(--color-primary-cyan);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 1rem;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  width: 100%;
+  cursor: pointer;
+}
+
+button > img {
+  margin-right: 0.2rem;
+}
+
+button:hover {
+  background: var(--color-primary-darker);
+  transition: 0.3s;
+}
+
+.attribution {
+  position: absolute;
+  font-size: 11px;
+  text-align: center;
+  bottom: 10px;
+}
+.attribution a {
+  color: var(--color-primary-cyan);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 600px;
+    margin: 0 auto;
+  }
+  .card {
+    flex-direction: row;
+  }
+  .card-body {
+    padding: 2rem;
+  }
+  .card-body > h1 {
+    margin: 1.5rem 0;
+  }
+  .card-body > p {
+    margin-bottom: 2rem;
+  }
+  .img-mobile {
+    display: none;
+  }
+  .img-desktop {
+    display: block;
+    width: 50%;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+  .price {
+    margin-bottom: 2rem;
+  }
+  .attribution {
+    bottom: 20px;
+  }
+}
